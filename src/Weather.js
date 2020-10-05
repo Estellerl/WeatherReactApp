@@ -1,46 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css";
+import axios from "axios";
 import ReactAnimatedWeather from "react-animated-weather";
 
-export default function Weather() {
-  return (
-    <div className="Weather">
-      <h1>Rome</h1>
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
-      <div className="headingtwo">
-        <div className="row">
-          <div className="col">
-            <div className="description">
-              <ReactAnimatedWeather
-                icon="CLEAR_DAY"
-                color="#000"
-                size={48}
-                animate={true}
-              />
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      city: response.data.name,
+      description: response.data.weather[0].description,
+      date: "Thursday 14:35",
+    });
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <h1>{props.defaultcity}</h1>
+
+        <div className="headingtwo">
+          <div className="row">
+            <div className="col">
+              <div className="description">
+                <ReactAnimatedWeather
+                  icon="CLEAR_DAY"
+                  color="#000"
+                  size={48}
+                  animate={true}
+                />
+                <span className="text-capitalize">
+                  {" "}
+                  {weatherData.description}
+                </span>
+              </div>
+            </div>
+            <div className="col">
+              {" "}
+              <span className="line">|</span>
+            </div>
+
+            <div className="col">
+              <span className="temperature">
+                {Math.round(weatherData.temperature)}
+              </span>
+
+              <span className="unit">°C|F</span>
             </div>
           </div>
-          <div class="col">
-            {" "}
-            <span className="line">|</span>
-          </div>
-
-          <div className="col">
-            <div className="Temperature">24°C|F</div>
-          </div>
         </div>
-      </div>
-      <hr />
-      <div className="headingthree">
-        <div class="row">
-          <div class="col">
-            <strong> Thursday </strong>{" "}
-          </div>
-          <div class="col"> 14:35 </div>
-        </div>
+        <hr />
+        <div className="headingthree">{weatherData.date}</div>
 
         <div className="wrh">
-          <div class="row">
-            <div class="col">
+          <div className="row">
+            <div className="col">
               <ReactAnimatedWeather
                 icon="WIND"
                 color="#000"
@@ -48,10 +67,10 @@ export default function Weather() {
                 animate={true}
               />
               <br />
-              2km/hr
+              {weatherData.wind}
             </div>
 
-            <div class="col">
+            <div className="col">
               {" "}
               <ReactAnimatedWeather
                 icon="RAIN"
@@ -60,11 +79,17 @@ export default function Weather() {
                 animate={true}
               />
               <br />
-              30%
+              {weatherData.humidity}%
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "b9dcade6ea8b84ffbd9565650e525892";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultcity}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return " Loading...";
+  }
 }

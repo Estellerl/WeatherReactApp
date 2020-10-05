@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultcity="Bordeaux" />
         <br />
         <Forecast />
         <br />
@@ -18,7 +18,7 @@ function App() {
         <footer>
           This page was coded by
           <a
-            class="name"
+            className="name"
             href="https://www.linkedin.com/in/estelle-reeves-long-2816ab1a1/"
             target="blank"
           >
@@ -26,7 +26,7 @@ function App() {
           </a>
           <br />
           <a
-            class="gitHub"
+            className="gitHub"
             href="https://github.com/Estellerl/WeatherApp-Vanilla"
             target="blank"
           >
