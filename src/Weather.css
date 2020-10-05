@@ -1,0 +1,34 @@
+.Weather {
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 40px;
+}
+h1 {
+  text-align: center;
+  line-height: 90px;
+}
+
+.headingtwo {
+  text-align: center;
+}
+
+.description {
+  padding-left: 80px;
+}
+
+.Temperature {
+  padding-top: 5px;
+  padding-right: 80px;
+  font-size: 30px;
+}
+
+.line {
+  font-size: 80px;
+  line-height: 10px;
+  font-weight: 100;
+  color: #b8b3c0;
+}
+
+.headingthree {
+  text-align: center;
+}
