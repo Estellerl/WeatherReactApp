@@ -4,3 +4,20 @@
   max-width: 600px;
   border-radius: 6px;
 }
+
+footer {
+  font-family: monospace;
+  font-size: 10px;
+  color: #78909c;
+  padding-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.name {
+  color: #78909c;
+}
+
+.gitHub {
+  color: #78909c;
+}
