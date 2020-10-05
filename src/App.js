@@ -1,7 +1,6 @@
 import React from "react";
 import Weather from "./Weather";
 import Forecast from "./Forecast";
-import Search from "./Search";
 
 import "./App.css";
 
@@ -13,7 +12,6 @@ function App() {
         <br />
         <Forecast />
         <br />
-        <Search />
 
         <footer>
           This page was coded by
