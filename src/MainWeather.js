@@ -18,6 +18,7 @@ export default function MainWeather(props) {
                 animate={true}
               />
               <span className="text-capitalize"> {props.data.description}</span>
+              <img src={props.data.icon} alt={props.data.description} />
             </div>
           </div>
           <div className="col">
