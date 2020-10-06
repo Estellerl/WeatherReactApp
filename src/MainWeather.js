@@ -1,6 +1,7 @@
 import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function MainWeather(props) {
   return (
@@ -11,14 +12,8 @@ export default function MainWeather(props) {
         <div className="row">
           <div className="col">
             <div className="description">
-              <ReactAnimatedWeather
-                icon="CLEAR_DAY"
-                color="#000"
-                size={48}
-                animate={true}
-              />
+              <WeatherIcon code={props.data.icon} />
               <span className="text-capitalize"> {props.data.description}</span>
-              <img src={props.data.icon} alt={props.data.description} />
             </div>
           </div>
           <div className="col">
