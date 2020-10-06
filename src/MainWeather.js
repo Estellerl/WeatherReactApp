@@ -5,7 +5,7 @@ import FormattedDate from "./FormattedDate";
 export default function MainWeather(props) {
   return (
     <div className="MainWeather">
-      <h1>{props.defaultcity}</h1>
+      <h1>{props.data.city}</h1>
 
       <div className="headingtwo">
         <div className="row">
@@ -49,7 +49,7 @@ export default function MainWeather(props) {
               animate={true}
             />
             <br />
-            {props.data.wind}
+            {Math.round(props.data.wind)}
           </div>
 
           <div className="col">
