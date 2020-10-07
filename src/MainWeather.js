@@ -2,6 +2,7 @@ import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import Unittemp from "./Unittemp";
 
 export default function MainWeather(props) {
   return (
@@ -23,10 +24,8 @@ export default function MainWeather(props) {
 
           <div className="col">
             <span className="temperature">
-              {Math.round(props.data.temperature)}
+              <Unittemp celcius={props.data.temperature} />
             </span>
-
-            <span className="unit">°C|F</span>
           </div>
         </div>
       </div>
