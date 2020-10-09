@@ -8,7 +8,8 @@ export default function FutureForcast(props) {
   }
 
   function showTemp() {
-    let Temp = Math.round(props.data.main.temp);
+    let Temp = props.data.main.temp;
+
     return `${Temp}°C`;
   }
 
@@ -18,7 +19,7 @@ export default function FutureForcast(props) {
         <div className="col">{hours()}</div>
         <div className="col"> 3km/hr</div>
         <div className="col"> 40%</div>
-        <div className="col"> {showTemp}</div>
+        <div className="col"> {showTemp()}</div>
       </div>
     </div>
   );

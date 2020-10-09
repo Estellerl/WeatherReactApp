@@ -8,14 +8,12 @@ export default function Forecast(props) {
   const [forecast, setForecast] = useState(null);
 
   function handleForecast(response) {
-    setWorking(true);
     setForecast(response.data);
+    setWorking(true);
   }
 
   if (working) {
     return (
-      //"working";
-
       //{forecast.list.slice(0,5)}.map(function(forcastItem)
       //{return} <FutureForcast data={forecastItem[0]} />
       //)}
