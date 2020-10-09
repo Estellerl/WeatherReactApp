@@ -1,6 +1,5 @@
 import React from "react";
 import Weather from "./Weather";
-import Forecast from "./Forecast";
 
 import "./App.css";
 
@@ -10,7 +9,7 @@ function App() {
       <div className="container">
         <Weather defaultcity="Bordeaux" />
         <br />
-        <Forecast />
+
         <br />
 
         <footer>

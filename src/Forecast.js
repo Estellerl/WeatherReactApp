@@ -1,52 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import FutureForcast from "./Futureforcast";
 import "./Forecast.css";
 
-export default function Forecast() {
-  return (
-    <div className="Forecast">
-      <div className="Day">
-        <div className="row">
-          <div className="col">Monday</div>
-          <div className="col"> 3km/hr</div>
-          <div className="col"> 40%</div>
-          <div className="col"> 20 C°</div>
-        </div>
-      </div>
-      <div className="Day">
-        <div className="row">
-          <div className="col">Tuesday</div>
-          <div className="col"> 3km/hr</div>
-          <div className="col"> 40%</div>
-          <div className="col"> 20 C°</div>
-        </div>
-      </div>
+export default function Forecast(props) {
+  const [working, setWorking] = useState(false);
+  const [forecast, setForecast] = useState(null);
 
-      <div className="Day">
-        <div className="row">
-          <div className="col">Wednesday </div>
-          <div className="col"> 3km/hr</div>
-          <div className="col"> 40%</div>
-          <div className="col"> 20 C°</div>
-        </div>
-      </div>
+  function handleForecast(response) {
+    setWorking(true);
+    setForecast(response.data);
+  }
 
-      <div className="Day">
-        <div className="row">
-          <div className="col">Thursday</div>
-          <div className="col"> 3km/hr</div>
-          <div className="col"> 40%</div>
-          <div className="col"> 20 C°</div>
-        </div>
-      </div>
+  if (working) {
+    return (
+      //"working";
 
-      <div className="Day">
-        <div className="row">
-          <div className="col">Friday</div>
-          <div className="col"> 3km/hr</div>
-          <div className="col"> 40%</div>
-          <div className="col"> 20 C°</div>
-        </div>
+      //{forecast.list.slice(0,5)}.map(function(forcastItem)
+      //{return} <FutureForcast data={forecastItem[0]} />
+      //)}
+      <div className="Forecast">
+        <FutureForcast data={forecast.list[0]} />
+        <FutureForcast data={forecast.list[1]} />
+        <FutureForcast data={forecast.list[2]} />
+        <FutureForcast data={forecast.list[3]} />
+        <FutureForcast data={forecast.list[4]} />
+        <FutureForcast data={forecast.list[5]} />
       </div>
-    </div>
-  );
+    );
+  } else {
+    let apiKey = "b9dcade6ea8b84ffbd9565650e525892";
+    let url = `http://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}`;
+    axios.get(url).then(handleForecast);
+
+    return null;
+  }
 }
