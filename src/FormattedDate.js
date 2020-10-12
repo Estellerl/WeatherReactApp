@@ -1,4 +1,5 @@
 import React from "react";
+import "./MainWeather.css";
 
 export default function FormattedDate(props) {
   let days = [
@@ -23,7 +24,11 @@ export default function FormattedDate(props) {
 
   return (
     <div className="FormattedDate">
-      {day} {hours}:{minutes}
+      <span className="LastUpdated"> Last updated </span>
+      <strong>
+        {" "}
+        {day} {hours}:{minutes}{" "}
+      </strong>
     </div>
   );
 }

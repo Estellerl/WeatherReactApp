@@ -27,6 +27,19 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
+  function CurrentLocation(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "b9dcade6ea8b84ffbd9565650e525892";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleCurrentloc(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(CurrentLocation);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     Search(city);
@@ -40,6 +53,8 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <MainWeather data={weatherData} />
+        <Forecast city={weatherData.city} />
+
         <div className="Search">
           <form onSubmit={handleSubmit}>
             <div className="row">
@@ -47,22 +62,22 @@ export default function Weather(props) {
                 <input
                   type="search"
                   placeholder="Enter a city.."
-                  className="form-control"
+                  className="searchbar"
                   autoFocus="on"
                   onChange={handleChangeCity}
                 />
               </div>
-              <div className="col-3">
-                <input
-                  type="submit"
-                  value="Search"
-                  className="btn btn-primary"
-                />
+              <div className="col">
+                <input type="submit" value="Search" className="searchbutton" />
               </div>
             </div>
           </form>
+          <div className="float-right">
+            <form onSubmit={handleCurrentloc}>
+              <input type="submit" value="" className="searchcurentloc" />
+            </form>
+          </div>
         </div>
-        <Forecast city={weatherData.city} />
       </div>
     );
   } else {

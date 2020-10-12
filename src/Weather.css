@@ -2,33 +2,25 @@
   border: 1px solid black;
   padding: 20px;
   border-radius: 40px;
-}
-h1 {
-  text-align: center;
-  line-height: 90px;
-}
-
-.headingtwo {
   text-align: center;
 }
 
-.description {
-  padding-left: 80px;
+.searchbutton {
+  border: 1px solid blue;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-left: 0px;
 }
 
-.Temperature {
-  padding-top: 5px;
-  padding-right: 80px;
-  font-size: 30px;
+.searchbar {
+  border: 1px solid blue;
+  padding: 4px;
+  border-radius: 10px;
+  margin-right: 0px;
 }
 
-.line {
-  font-size: 80px;
-  line-height: 10px;
-  font-weight: 100;
-  color: #b8b3c0;
-}
-
-.headingthree {
-  text-align: center;
+.searchcurentloc {
+  border-radius: 7px;
+  border: 1px solid blue;
+  position: relative;
 }

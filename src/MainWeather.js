@@ -1,67 +1,48 @@
 import React from "react";
-import ReactAnimatedWeather from "react-animated-weather";
+
 import FormattedDate from "./FormattedDate";
 
 import Unittemp from "./Unittemp";
 import WeatherIcon from "./WeatherIcon";
+import "./MainWeather.css";
 
 export default function MainWeather(props) {
   return (
     <div className="MainWeather">
       <h1>{props.data.city}</h1>
-
-      <div className="headingtwo">
-        <div className="row">
-          <div className="col">
-            <div className="description">
-              <WeatherIcon code={props.data.icon} />
-
-              <span className="text-capitalize"> {props.data.description}</span>
-            </div>
-          </div>
-          <div className="col">
-            {" "}
-            <span className="line">|</span>
-          </div>
-
-          <div className="col">
-            <span className="temperature">
-              <Unittemp celcius={props.data.temperature} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div className="headingthree">
+      <div className="date">
         <FormattedDate date={props.data.date} />
+      </div>
+      <div className="row">
+        <div className="col">
+          <Unittemp celcius={props.data.temperature} />
+        </div>
+        <div className="col-1">|</div>
+
+        <div className="col">
+          <div className="icon">
+            <WeatherIcon code={props.data.icon} />
+          </div>
+          <span className="text-capitalize"> {props.data.description}</span>
+        </div>
       </div>
 
       <div className="wrh">
         <div className="row">
           <div className="col">
-            <ReactAnimatedWeather
-              icon="WIND"
-              color="#000"
-              size={48}
-              animate={true}
-            />
+            <span>Wind </span>
             <br />
-            {Math.round(props.data.wind)}
+            {Math.round(props.data.wind)}km/hr
           </div>
 
           <div className="col">
-            {" "}
-            <ReactAnimatedWeather
-              icon="RAIN"
-              color="#000"
-              size={48}
-              animate={true}
-            />
+            Humidity
             <br />
             {props.data.humidity}%
           </div>
         </div>
       </div>
+      <hr />
     </div>
   );
 }
