@@ -26,23 +26,29 @@ export default function MainWeather(props) {
           <span className="text-capitalize"> {props.data.description}</span>
         </div>
       </div>
+      <hr />
 
       <div className="wrh">
         <div className="row">
           <div className="col">
-            <span>Wind </span>
+            <img
+              src="https://img.icons8.com/ios/50/000000/wind.png"
+              alt="wind"
+            />
             <br />
             {Math.round(props.data.wind)}km/hr
           </div>
 
           <div className="col">
-            Humidity
+            <img
+              src="https://img.icons8.com/android/24/000000/humidity.png"
+              alt="humidity"
+            />
             <br />
             {props.data.humidity}%
           </div>
         </div>
       </div>
-      <hr />
     </div>
   );
 }

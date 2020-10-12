@@ -7,13 +7,24 @@ function App() {
   return (
     <div className="App">
       <div className="container">
+        <img
+          src="https://img.icons8.com/metro/26/000000/sunrise.png"
+          alt="sunrise"
+          className="sunrise"
+        />
         <Weather defaultcity="Bordeaux" />
         <br />
 
+        <img
+          src="https://img.icons8.com/metro/26/000000/sunset.png"
+          className="sunset"
+          alt="sunset"
+        />
         <br />
 
         <footer>
           This page was coded by
+          <br />
           <a
             className="name"
             href="https://www.linkedin.com/in/estelle-reeves-long-2816ab1a1/"

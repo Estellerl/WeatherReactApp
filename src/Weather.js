@@ -58,7 +58,7 @@ export default function Weather(props) {
         <div className="Search">
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col">
+              <div className="col-4">
                 <input
                   type="search"
                   placeholder="Enter a city.."
@@ -72,11 +72,14 @@ export default function Weather(props) {
               </div>
             </div>
           </form>
-          <div className="float-right">
-            <form onSubmit={handleCurrentloc}>
-              <input type="submit" value="" className="searchcurentloc" />
-            </form>
-          </div>
+        </div>
+        <div className="float-right">
+          <img
+            onClick={handleCurrentloc}
+            src="https://img.icons8.com/material-outlined/24/000000/worldwide-location.png"
+            alt="currentlocation"
+            className="currentLoc"
+          />
         </div>
       </div>
     );

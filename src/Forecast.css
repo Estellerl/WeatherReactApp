@@ -1,6 +1,10 @@
-.Day {
+.FutureForcast {
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
   margin-top: 2px;
+}
+
+.km {
+  font-size: 10px;
 }

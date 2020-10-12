@@ -9,18 +9,22 @@
   border: 1px solid blue;
   padding: 4px 10px;
   border-radius: 10px;
-  margin-left: 0px;
+  margin-left: 30px;
 }
 
 .searchbar {
   border: 1px solid blue;
-  padding: 4px;
+  padding: 4px 60px 4px 4px;
   border-radius: 10px;
-  margin-right: 0px;
 }
 
-.searchcurentloc {
-  border-radius: 7px;
-  border: 1px solid blue;
+.currentLoc {
+  cursor: pointer;
   position: relative;
+  top: -31px;
+  left: -20px;
+}
+
+.Search {
+  padding-top: 10px;
 }
