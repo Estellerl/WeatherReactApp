@@ -1,5 +1,5 @@
 import React from "react";
-import "./Forecast.css";
+import "./MainWeather.css";
 
 export default function FutureForcast(props) {
   function hours() {

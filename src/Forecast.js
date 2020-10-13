@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FutureForcast from "./Futureforcast";
-import "./Forecast.css";
 
 export default function Forecast(props) {
   const [working, setWorking] = useState(false);

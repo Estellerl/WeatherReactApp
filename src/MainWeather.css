@@ -3,8 +3,40 @@
   padding-bottom: 10px;
 }
 
-h1 {
+.MainWeather h1 {
   text-align: center;
+}
+
+.MainWeather .text-capitalize {
+  font-size: 9px;
+  float: right;
+  line-height: 4px;
+}
+
+.MainWeather .icon {
+  padding-top: 13px;
+  line-height: 4px;
+}
+
+.MainWeather .col-1 {
+  font-size: 80px;
+  line-height: 70px;
+  font-weight: 100;
+}
+
+.MainWeather .wrh {
+  padding-bottom: 20px;
+}
+
+.FutureForcast {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 2px;
+}
+
+.FutureForcast .km {
+  font-size: 10px;
 }
 
 .Unittemp .temp {
@@ -16,25 +48,4 @@ h1 {
   position: relative;
   top: -36px;
   left: 2px;
-}
-
-.text-capitalize {
-  font-size: 9px;
-  float: right;
-  line-height: 4px;
-}
-
-.icon {
-  padding-top: 13px;
-  line-height: 4px;
-}
-
-.col-1 {
-  font-size: 80px;
-  line-height: 70px;
-  font-weight: 100;
-}
-
-.wrh {
-  padding-bottom: 20px;
 }

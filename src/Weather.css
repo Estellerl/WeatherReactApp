@@ -6,14 +6,14 @@
 }
 
 .searchbutton {
-  border: 1px solid blue;
+  border: 1px solid black;
   padding: 4px 10px;
   border-radius: 10px;
   margin-left: 30px;
 }
 
 .searchbar {
-  border: 1px solid blue;
+  border: 1px solid black;
   padding: 4px 60px 4px 4px;
   border-radius: 10px;
 }

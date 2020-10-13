@@ -8,16 +8,20 @@
 footer {
   font-family: monospace;
   font-size: 10px;
-  color: #78909c;
+  color: #6d7f88;
   padding-top: 20px;
-  margin-bottom: 50px;
+
   text-align: center;
 }
 
 .name {
-  color: #78909c;
+  color: #6d7f88;
+  font-family: monospace;
+  font-size: 10px;
 }
 
-.gitHub {
-  color: #78909c;
+.iconreference {
+  color: #6d7f88;
+  font-family: monospace;
+  font-size: 5px;
 }

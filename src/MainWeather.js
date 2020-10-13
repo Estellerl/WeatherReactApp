@@ -41,7 +41,7 @@ export default function MainWeather(props) {
 
           <div className="col">
             <img
-              src="https://img.icons8.com/android/24/000000/humidity.png"
+              src="https://img.icons8.com/android/48/000000/humidity.png"
               alt="humidity"
             />
             <br />
