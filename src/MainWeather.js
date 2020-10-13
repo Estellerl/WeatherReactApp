@@ -36,7 +36,8 @@ export default function MainWeather(props) {
               alt="wind"
             />
             <br />
-            {Math.round(props.data.wind)}km/hr
+            {Math.round(props.data.wind)}
+            <span className="km">km/hr</span>
           </div>
 
           <div className="col">

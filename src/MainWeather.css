@@ -28,6 +28,10 @@
   padding-bottom: 20px;
 }
 
+.MainWeather .km {
+  font-size: 10px;
+}
+
 .FutureForcast {
   border: 1px solid black;
   border-radius: 10px;
